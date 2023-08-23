@@ -22,7 +22,7 @@ import javax.swing.JTable;
 import javax.swing.JSeparator;
 import java.awt.Panel;
 
-public class reseñas {
+public class reseÃ±as {
     private JFrame frame;
     private JButton btnNewButton_1;
     private JButton btnNewButton_2;
@@ -58,7 +58,7 @@ public class reseñas {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                	reseñas window = new reseñas();
+                	reseÃ±as window = new reseÃ±as();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -67,7 +67,7 @@ public class reseñas {
         });
     }
 
-    public reseñas() {
+    public reseÃ±as() {
         initialize();
     }
 
@@ -82,15 +82,9 @@ public class reseñas {
         Image imagen = icono.getImage();
         ImageIcon iconoAchicado = new ImageIcon(imagen.getScaledInstance(100, 100, Image.SCALE_SMOOTH));
         
-        ImageIcon icono1 = new ImageIcon("Imágenes\\messi.JPG");
+        ImageIcon icono1 = new ImageIcon("ImÃ¡genes\\messi.JPG");
         Image imagen1 = icono1.getImage();
         ImageIcon iconoAchicado1 = new ImageIcon(imagen1.getScaledInstance(100, 100, Image.SCALE_SMOOTH));
-        
-        lblNewLabel_1 = new JLabel("Travel Discover");
-        lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 22));
-        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setBounds(370, 105, 145, 35);
-        frame.getContentPane().add(lblNewLabel_1);
         
         panel = new JPanel();
         panel.setBackground(new Color(109, 119, 146));
@@ -99,6 +93,19 @@ public class reseñas {
         panel.setLayout(null);
         
                 JButton btnNewButton = new JButton("Inicio");
+                btnNewButton.addActionListener(new ActionListener() {
+                	public void actionPerformed(ActionEvent e) {
+                		
+                		inicio newframe = new inicio();
+                		
+                		newframe.setVisible(true);
+                		this.dispose();
+                	}
+
+					private void dispose() {
+						frame.setVisible(false);						
+					}
+                });
                 btnNewButton.setBounds(184, 24, 102, 30);
                 panel.add(btnNewButton);
                 btnNewButton.setForeground(new Color(255, 255, 255));
@@ -131,7 +138,7 @@ public class reseñas {
                                 textFieldSearch.setColumns(10);
                                 
                                         JLabel lblNewLabel = new JLabel("Travel Discover");
-                                        lblNewLabel.setBounds(0, -1, 171, 81);
+                                        lblNewLabel.setBounds(0, -1, 162, 81);
                                         panel.add(lblNewLabel);
                                         lblNewLabel.setForeground(new Color(255, 255, 255));
                                         lblNewLabel.setBackground(new Color(109, 119, 146));
@@ -198,19 +205,19 @@ public class reseñas {
       
         
         JLabel lblNewLabel_15 = new JLabel("Calificacion:");
-        lblNewLabel_15.setBounds(112, 160, 88, 21);
+        lblNewLabel_15.setBounds(86, 160, 145, 45);
         panel_5.add(lblNewLabel_15);
         lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel_15.setFont(new Font("Times New Roman", Font.PLAIN, 18));
         
         Label label = new Label("Correo electronico o usuario:");
-        label.setBounds(97, 516, 236, 58);
+        label.setBounds(183, 538, 236, 58);
         panel_5.add(label);
         label.setForeground(Color.BLACK);
         label.setFont(new Font("Times New Roman", Font.PLAIN, 18));
         
         TextField textField_7 = new TextField();
-        textField_7.setBounds(330, 526, 258, 40);
+        textField_7.setBounds(425, 538, 258, 40);
         panel_5.add(textField_7);
         
         textField_6 = new JTextField();
@@ -219,13 +226,24 @@ public class reseñas {
         textField_6.setColumns(10);
         
         JLabel lblNewLabel_16 = new JLabel("Cuerpo de la rese\u00F1a:");
-        lblNewLabel_16.setBounds(86, 294, 184, 58);
+        lblNewLabel_16.setBounds(86, 298, 155, 45);
         panel_5.add(lblNewLabel_16);
         lblNewLabel_16.setFont(new Font("Times New Roman", Font.PLAIN, 18));
         
         JLabel lblNewLabel_4 = new JLabel("Rese\u00F1as");
-        lblNewLabel_4.setBounds(75, 100, 114, 45);
+        lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel_4.setBounds(372, 95, 145, 45);
         panel_5.add(lblNewLabel_4);
         lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        
+        lblNewLabel_1 = new JLabel("Travel Discover");
+        lblNewLabel_1.setBounds(372, 26, 145, 35);
+        panel_5.add(lblNewLabel_1);
+        lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 22));
+        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
     }
+
+	public void setVisble(boolean b) {
+frame.setVisible(true);		
+	}
 }
