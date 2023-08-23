@@ -1,4 +1,6 @@
-package pagina;
+package agina;
+
+
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -85,6 +87,20 @@ public class servi {
         textField_1.setColumns(10);
 
         JButton btnNewButton = new JButton("Inicio");
+        btnNewButton.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		inicio newframe = new inicio();
+        		
+        		newframe.setVisible(true);
+        		
+        		this.dispose();
+        	}
+
+			private void dispose() {
+				frame.setVisible(false);				
+			}
+        });
         btnNewButton.setBackground(new Color(14, 94, 171));
         btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         btnNewButton.setBounds(177, 23, 102, 30);
@@ -100,6 +116,20 @@ public class servi {
         btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         btnNewButton_1.setBounds(312, 24, 114, 30);
         frame.getContentPane().add(btnNewButton_1);
+        btnNewButton_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		inicio newframe1 = new inicio();
+        		
+        		newframe1.setVisible(true);
+        		
+        		this.dispose();
+        	}
+
+			private void dispose() {
+				frame.setVisible(false);				
+			}
+        });
 
         textField_3 = new JTextField();
         textField_3.setBounds(436, 0, 3, 81);
@@ -417,4 +447,10 @@ public class servi {
         frame.getContentPane().add(panel_10);
         
     }
+
+	public void setVisble(boolean b) {
+		frame.setVisible(true);
+		
+	}
 }
+
