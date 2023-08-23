@@ -1,4 +1,4 @@
-package pagina;
+package agina;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -13,7 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPanel;
 
-public class Inicio {
+public class inicio {
     private JFrame frame;
     private JTextField textField;
     private JTextField textField_1;
@@ -53,7 +53,7 @@ public class Inicio {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    Inicio window = new Inicio();
+                    inicio window = new inicio();
                     window.frame.setVisible(true);
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -62,7 +62,7 @@ public class Inicio {
         });
     }
 
-    public Inicio() {
+    public inicio() {
         initialize();
     }
 
@@ -99,7 +99,15 @@ public class Inicio {
         btnNewButton.setForeground(new Color(255, 255, 255));
         btnNewButton.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		inicio newframe = new inicio();
+        		newframe.setVisible(true);
+        		
+        		this.dispose();
         	}
+
+			private void dispose() {
+				frame.setVisible(false);
+			}
         });
         btnNewButton.setBackground(new Color(14, 94, 171));
         btnNewButton.setFont(new Font("Times New Roman", Font.PLAIN, 20));
@@ -114,6 +122,20 @@ public class Inicio {
         textField_2.setColumns(10);
 
         btnNewButton_1 = new JButton("Servicios");
+        btnNewButton_1.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		
+        		servi newframe = new servi();
+        		newframe.setVisble(true);
+        		this.dipose();
+        		
+        		
+        	}
+
+			private void dipose() {
+				frame.setVisible(false);				
+			}
+        });
         btnNewButton_1.setForeground(new Color(255, 255, 255));
         btnNewButton_1.setBackground(new Color(14, 94, 171));
         btnNewButton_1.setFont(new Font("Times New Roman", Font.PLAIN, 20));
@@ -127,11 +149,20 @@ public class Inicio {
         frame.getContentPane().add(textField_3);
         textField_3.setColumns(10);
 
-        btnNewButton_2 = new JButton("Resenias");
+        btnNewButton_2 = new JButton("reseñas");
         btnNewButton_2.setForeground(new Color(255, 255, 255));
         btnNewButton_2.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) {
+        		
+        		reseñas newframe1 = new reseñas();
+        		newframe1.setVisble(true);
+        		
+        		this.dispose();
         	}
+
+			private void dispose() {
+				frame.setVisible(false);
+			}
         });
         btnNewButton_2.setBackground(new Color(14, 94, 171));
         btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
@@ -465,4 +496,8 @@ public class Inicio {
         btnNewButton_4.setFont(new Font("Arial", Font.BOLD, 30));
         
     }
+
+	protected void setVisible(boolean b) {
+		frame.setVisible(true);		
+	}
 }
