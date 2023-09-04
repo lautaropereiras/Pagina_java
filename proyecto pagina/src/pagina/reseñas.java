@@ -1,69 +1,48 @@
 package pagina;
 
-
-
-import java.awt.Color;
-import java.awt.EventQueue;
-import java.awt.Font;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.SwingConstants;
-import java.awt.event.ActionListener;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
-import javax.swing.JPanel;
-import java.awt.Label;
-import java.awt.TextField;
-import java.awt.Image;
-import javax.swing.JSeparator;
-import java.awt.Panel;
+import java.awt.event.ActionListener;
 
-public class reseñas {
-    private JFrame frame;
+public class RESE extends JFrame {
+    private JPanel panel;
+    private JTextField textFieldEmail;
+    private JTextArea textAreaResena;
+    private JLabel lblCalificacion;
+    private JLabel lblTitulo;
+    private JButton btnEnviar;
+    private JPanel panel_1;
     private JButton btnNewButton_1;
     private JButton btnNewButton_2;
     private JTextField textFieldSearch;
     private JButton btnNewButton_4;
-    private JLabel lblNewLabel_1;
-    private JPanel panel;
-    private JTextField textField_6;
+    private JPanel panel2;
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                	reseñas window = new reseñas();
-                    window.frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+    public RESE() {
+        setTitle("ReseÃ±as");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(900, 700);
+        setLocationRelativeTo(null);
+        getContentPane().setLayout(new BorderLayout());
 
-    public reseñas() {
-        initialize();
-    }
-
-    private void initialize() {
-        frame = new JFrame();
-        frame.getContentPane().setBackground(new Color(240, 240, 240));
-        frame.setBounds(100, 100, 931, 813);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.getContentPane().setLayout(null);
+        panel = new JPanel();
+        panel.setLayout(null);
+        panel.setBackground(new Color(109, 119, 146));
+        
+        
+        
+        
+        
+        panel2 = new JPanel();
+        panel2.setBackground(new Color(109, 119, 146));
+        panel2.setBounds(-4, 0, 919, 79);
+        panel.getRootPane().add(panel2);
+        panel.setLayout(null);
         
         ImageIcon icono = new ImageIcon("C:\\Users\\Alumno\\Desktop\\pato.png");
         Image imagen = icono.getImage();
         ImageIcon iconoAchicado = new ImageIcon(imagen.getScaledInstance(100, 100, Image.SCALE_SMOOTH));
-        
-        
-        panel = new JPanel();
-        panel.setBackground(new Color(109, 119, 146));
-        panel.setBounds(-4, 0, 919, 79);
-        frame.getContentPane().add(panel);
-        panel.setLayout(null);
         
                 JButton btnNewButton = new JButton("Inicio");
                 btnNewButton.addActionListener(new ActionListener() {
@@ -76,7 +55,7 @@ public class reseñas {
                 	}
 
 					private void dispose() {
-						frame.setVisible(false);						
+						panel.setVisible(false);						
 					}
                 });
                 btnNewButton.setBounds(184, 24, 102, 30);
@@ -97,7 +76,7 @@ public class reseñas {
                         	}
 
 							private void dispose() {
-								frame.setVisible(false);								
+								panel.setVisible(false);								
 							}
                         	
                         	
@@ -115,14 +94,14 @@ public class reseñas {
                                 btnNewButton_2.addActionListener(new ActionListener() {
                                 	public void actionPerformed(ActionEvent e) {
                                 		
-                                		reseñas newframe = new reseñas();
-                                		newframe.setVisble(true);
+                                		RESE newframe = new RESE();
+                                		newframe.setVisible(true);
                                 		this.dispose();
                                 		
                                 	}
 
         							private void dispose() {
-        								frame.setVisible(false);								
+        								panel.setVisible(false);								
         							}
                                 	
                                 	}
@@ -191,59 +170,78 @@ public class reseñas {
                                         separator_4.setBounds(792, -1, 12, 81);
                                         panel.add(separator_4);
         
-        Panel panel_5 = new Panel();
-        panel_5.setBounds(-4, 80, 919, 669);
-        frame.getContentPane().add(panel_5);
-        panel_5.setLayout(null);
-        
-    
 
-        
+        lblTitulo = new JLabel("Travel Discover");
+        lblTitulo.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 30));
+        lblTitulo.setBounds(344, 151, 200, 40);
+        lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+        lblTitulo.setForeground(Color.WHITE);
+        panel.add(lblTitulo);
 
+        lblCalificacion = new JLabel("CalificaciÃ³n:");
+        lblCalificacion.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        lblCalificacion.setBounds(192, 221, 192, 30);
+        lblCalificacion.setHorizontalAlignment(SwingConstants.LEFT);
+        panel.add(lblCalificacion);
         
-      
+     
+
+        for (int i = 0; i < 5; i++) {
+            JButton starButton = new JButton(""); // CarÃ¡cter Unicode de una estrella
+            starButton.setFont(new Font("Arial", Font.PLAIN, 24));
+            starButton.setBounds(361 + i * 61, 223, 40, 30);
+            int finalI = i + 1;
+            starButton.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    lblCalificacion.setText("CalificaciÃ³n: " + finalI + " estrellas:");
+                }
+            });
+            panel.add(starButton);
+        }
+
+        JLabel lblResena = new JLabel("Cuerpo de la reseÃ±a:");
+        lblResena.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        lblResena.setBounds(149, 278, 200, 30);
+        lblResena.setHorizontalAlignment(SwingConstants.RIGHT);
+        panel.add(lblResena);
+
+        textAreaResena = new JTextArea();
+        textAreaResena.setBounds(359, 283, 300, 150);
+        panel.add(textAreaResena);
+
+        JLabel lblEmail = new JLabel("Correo electrÃ³nico o usuario:");
+        lblEmail.setFont(new Font("Times New Roman", Font.PLAIN, 18));
+        lblEmail.setBounds(150, 444, 240, 30);
+        lblEmail.setHorizontalAlignment(SwingConstants.RIGHT);
+        panel.add(lblEmail);
+
+        textFieldEmail = new JTextField();
+        textFieldEmail.setBounds(399, 446, 260, 30);
+        panel.add(textFieldEmail);
+
+        btnEnviar = new JButton("Enviar");
+        btnEnviar.setFont(new Font("Times New Roman", Font.PLAIN, 20));
+        btnEnviar.setBounds(377, 528, 120, 40);
+        panel.add(btnEnviar);
+
+        getContentPane().add(panel, BorderLayout.CENTER);
         
-        JLabel lblNewLabel_15 = new JLabel("Calificacion:");
-        lblNewLabel_15.setBounds(86, 160, 145, 45);
-        panel_5.add(lblNewLabel_15);
-        lblNewLabel_15.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_15.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        
-        Label label = new Label("Correo electronico o usuario:");
-        label.setBounds(183, 538, 236, 58);
-        panel_5.add(label);
-        label.setForeground(Color.BLACK);
-        label.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        
-        TextField textField_7 = new TextField();
-        textField_7.setBounds(425, 538, 258, 40);
-        panel_5.add(textField_7);
-        
-        textField_6 = new JTextField();
-        textField_6.setBounds(247, 315, 326, 169);
-        panel_5.add(textField_6);
-        textField_6.setColumns(10);
-        
-        JLabel lblNewLabel_16 = new JLabel("Cuerpo de la rese\u00F1a:");
-        lblNewLabel_16.setBounds(86, 298, 155, 45);
-        panel_5.add(lblNewLabel_16);
-        lblNewLabel_16.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        
-        JLabel lblNewLabel_4 = new JLabel("Rese\u00F1as");
-        lblNewLabel_4.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_4.setBounds(372, 95, 145, 45);
-        panel_5.add(lblNewLabel_4);
-        lblNewLabel_4.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        
-        lblNewLabel_1 = new JLabel("Travel Discover");
-        lblNewLabel_1.setBounds(372, 26, 145, 35);
-        panel_5.add(lblNewLabel_1);
-        lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 22));
-        lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+        panel_1 = new JPanel();
+        panel_1.setBackground(new Color(0, 0, 0));
+        panel_1.setBounds(-2, 0, 914, 81);
+        panel.setBackground(new Color(109, 119, 146));
+        panel.add(panel_1);
     }
 
-	public void setVisble(boolean b) {
-frame.setVisible(true);		
-	}
+    public static void main(String[] args) {
+        EventQueue.invokeLater(() -> {
+            try {
+                RESE window = new RESE();
+                window.setVisible(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+    }
 }
-
