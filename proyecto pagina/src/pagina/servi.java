@@ -167,7 +167,7 @@ public class servi {
         btnNewButton_2.setForeground(new Color(255, 255, 255));
         btnNewButton_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                reseñas newframe = new reseñas();
+                rese�as newframe = new rese�as();
                 newframe.setVisble(true);
                 frame.dispose();
             }
@@ -236,10 +236,20 @@ public class servi {
         showCurrentCard2();
     }
 
-    private void showCurrentCard() {
+    protected void setVisble(boolean b) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	private void showCurrentCard() {
     	
     	
         cardPanel.removeAll();
+        JPanel card = new JPanel();
+        card.setLayout(null);
+        card.setBackground(Color.blue);
+        card.setBounds(253, 11, 393, 407);
+        cardPanel.add(card);
         
         if (currentCardIndex == 0) {
             JLabel lblNewLabel_5 = new JLabel("Greece/Grecia");
@@ -394,12 +404,37 @@ public class servi {
             card.add(lblNewLabel_14);
             card.add(btnNewButton_8);
         }
+        JButton prevButton = new JButton("Anterior");
+        prevButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        prevButton.setBounds(10, 180, 163, 68);
+        cardPanel.add(prevButton);
+
+        JButton nextButton = new JButton("Siguiente");
+        nextButton.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        nextButton.setBounds(698, 180, 163, 68);
+        cardPanel.add(nextButton);
+
+        nextButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showNextCard();
+            }
+        });
+        prevButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showPreviousCard();
+            }
+        });
         frame.validate();
         frame.repaint();
     }
 
     private void showCurrentCard2() {
         cardPanel2.removeAll();
+        JPanel card2 = new JPanel();
+        card2.setLayout(null);
+        card2.setBackground(Color.blue);
+        card2.setBounds(253, 11, 393, 407);
+        cardPanel2.add(card2);
         if (currentCardIndex2 == 0) {
             JLabel lblNewLabel_5_1 = new JLabel("cccccc");
             lblNewLabel_5_1.setForeground(new Color(255, 255, 255));
@@ -558,6 +593,27 @@ public class servi {
             card2.add(lblNewLabel_14_1);
             card2.add(btnNewButton_13);
         }
+        
+        JButton prevButton2 = new JButton("Anterior");
+        prevButton2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        prevButton2.setBounds(10, 180, 163, 68);
+        cardPanel2.add(prevButton2);
+
+        JButton nextButton2 = new JButton("Siguiente");
+        nextButton2.setFont(new Font("Times New Roman", Font.BOLD, 20));
+        nextButton2.setBounds(698, 180, 163, 68);
+        cardPanel2.add(nextButton2);
+
+        nextButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showNextCard2();
+            }
+        });
+        prevButton2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                showPreviousCard2();
+            }
+        });
         frame.validate();
         frame.repaint();
     }
