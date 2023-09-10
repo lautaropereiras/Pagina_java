@@ -42,7 +42,6 @@ public class Inicio {
             "Contenido de la tarjeta 9",
             "Contenido de la tarjeta 10"
         };
-    private JButton btnNewButton_5;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -144,8 +143,8 @@ public class Inicio {
         btnNewButton_2.setForeground(new Color(255, 255, 255));
         btnNewButton_2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                resenias newframe1 = new resenias();
-                newframe1.setVisible(true);
+                reseñas newframe1 = new reseñas();
+                newframe1.setVisble(true);
                 this.dispose();
             }
 
@@ -185,7 +184,7 @@ public class Inicio {
         lblNewLabel_1.setBounds(342, 107, 197, 59);
         frame.getContentPane().add(lblNewLabel_1);
 
-        lblNewLabel_2 = new JLabel("<html>En Travel Discover, no solo creamos resenias; creamos conexiones entre los viajeros y los lugares que desean explorar. Nuestra mision es llevar a los viajeros mas alla de las postales y las descripciones superficiales, sumergiendolos en la autenticidad de cada lugar. Ya sea que estes planeando unas vacaciones en familia, una escapada romantica o una aventura en solitario, nuestras resenias estan diseniadas para inspirar y brindarte una vision realista de lo que te espera.</html>");
+        lblNewLabel_2 = new JLabel("<html>En Travel Discover, no solo creamos resenias; creamos conexiones entre los viajeros y los lugares que desean explorar. Nuestra mision es llevar a los viajeros mas alla de las postales y las descripciones superficiales, sumergiendolos en la autenticidad de cada lugar. Ya sea que estes planeando unas vacaciones en familia, una escapada romantica o una aventura en solitario, nuestras resenias estan diseñadas para inspirar y brindarte una vision realista de lo que te espera.</html>");
         lblNewLabel_2.setForeground(new Color(255, 255, 255));
         lblNewLabel_2.setToolTipText("");
         lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
@@ -205,23 +204,6 @@ public class Inicio {
         cardPanel.setBounds(0, 334, 899, 429);
         frame.getContentPane().add(cardPanel);
         cardPanel.setLayout(null);
-        
-        btnNewButton_5 = new JButton("");
-        btnNewButton_5.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		registrarse newframe = new registrarse();
-        		newframe.setVisible(true);
-        		this.dispose();
-        		
-        		
-        	}
-
-			private void dispose() {
-				frame.setVisible(false);
-			}
-        });
-        btnNewButton_5.setBounds(798, 11, 89, 56);
-        frame.getContentPane().add(btnNewButton_5);
 
         showCurrentCard();
     }
@@ -243,14 +225,14 @@ public class Inicio {
 
         card.add(lblParis);
 
-        JLabel lblNewLabel_10 = new JLabel("<html>Francia, la joya de Europa, es un pais lleno de encanto y diversidad. Desde la majestuosa Paris hasta los viniedos de Burdeos y las playas de la Riviera Francesa, ofrece una experiencia cultural, gastronomica y natural inigualable. Descubre la Ciudad de la Luz, saborea su deliciosa cocina, y sumergete en su rica historia y elegante estilo de vida. ¡Un viaje a Francia es un viaje inolvidable!</html>");
+        JLabel lblNewLabel_10 = new JLabel("<html>Francia, la joya de Europa, es un país lleno de encanto y diversidad. Desde la majestuosa París hasta los viñedos de Burdeos y las playas de la Riviera Francesa, ofrece una experiencia cultural, gastronómica y natural inigualable. Descubre la Ciudad de la Luz, saborea su deliciosa cocina, y sumérgete en su rica historia y elegante estilo de vida. ¡Un viaje a Francia es un viaje inolvidable!</html>");
         lblNewLabel_10.setForeground(new Color(255, 255, 255));
         lblNewLabel_10.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-        lblNewLabel_10.setBounds(5, 142, 393, 233);
+        lblNewLabel_10.setBounds(0, 174, 393, 233);
         card.add(lblNewLabel_10);
         
         JButton btnNewButton_3 = new JButton("");
-        btnNewButton_3.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/francia (1) (1).jpg"));
+        btnNewButton_3.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/francia (1) (1).jpg"));
         btnNewButton_3.setBounds(0, 27, 421, 147);
         card.add(btnNewButton_3);
         }
@@ -263,14 +245,14 @@ public class Inicio {
 
             card.add(lblEgipto);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Egipto, tierra de los faraones y misterios ancestrales. Explora las piramides, navega por el Nilo, sumergete en la cultura y el desierto, y descubre la historia en museos. ¡Un viaje a Egipto es un viaje a la antiguedad y la maravilla!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Egipto, tierra de los faraones y misterios ancestrales. Explora las pirámides, navega por el Nilo, sumérgete en la cultura y el desierto, y descubre la historia en museos. ¡Un viaje a Egipto es un viaje a la antigüedad y la maravilla!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 97, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/egipto (2).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/egipto (2).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -282,14 +264,14 @@ public class Inicio {
             lblItalia.setHorizontalAlignment(SwingConstants.CENTER);
             card.add(lblItalia);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Italia, un pais de arte, historia y comida deliciosa. Explora Roma, Florencia y Venecia, disfruta de la pizza y el gelato, y sumergete en la belleza de sus paisajes. ¡Un viaje a Italia es una experiencia inolvidable!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Italia, un país de arte, historia y comida deliciosa. Explora Roma, Florencia y Venecia, disfruta de la pizza y el gelato, y sumérgete en la belleza de sus paisajes. ¡Un viaje a Italia es una experiencia inolvidable!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 97, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/italia (2).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/italia (2).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -302,14 +284,14 @@ public class Inicio {
 
             card.add(lblBrasil);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Brasil, un pais de playas, Carnaval, selva amazonica, ciudades vibrantes y una cultura diversa. Descubre la belleza natural y la pasion de la vida brasilenia en tu viaje. ¡Brasil te espera con los brazos abiertos!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Brasil, un país de playas, Carnaval, selva amazónica, ciudades vibrantes y una cultura diversa. Descubre la belleza natural y la pasión de la vida brasileña en tu viaje. ¡Brasil te espera con los brazos abiertos!</html>");
             lblNewLabel_11.setForeground(new Color(255,255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 87, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/brasil (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/brasil (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -322,14 +304,14 @@ public class Inicio {
 
             card.add(lblEspania);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Espania, pais de arte, gastronomia, festividades y paisajes variados. Explora su historia, cultura y hospitalidad en tu viaje. ¡Espania te espera con los brazos abiertos!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>España, país de arte, gastronomía, festividades y paisajes variados. Explora su historia, cultura y hospitalidad en tu viaje. ¡España te espera con los brazos abiertos!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 87, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/spain.jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/spain.jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -342,14 +324,14 @@ public class Inicio {
 
             card.add(lblGrecia);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Grecia es un pais que ofrece una mezcla unica de historia, belleza natural y cultura. Un viaje aqui te llevara a traves de los siglos y te permitira disfrutar de las delicias mediterraneas en un entorno de postal. ¡Ven y descubre el encanto de Grecia en tu proximo viaje!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Grecia es un país que ofrece una mezcla única de historia, belleza natural y cultura. Un viaje aquí te llevará a través de los siglos y te permitirá disfrutar de las delicias mediterráneas en un entorno de postal. ¡Ven y descubre el encanto de Grecia en tu próximo viaje!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 108, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/greciaaa (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/greciaaa (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -362,14 +344,14 @@ public class Inicio {
 
             card.add(lblPeru);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Peru es un pais que te llevara desde las alturas de los Andes hasta las profundidades de la selva amazonica, y te mostrara¡ una historia rica y una cultura vibrante en cada paso del camino. ¡Ven a descubrir las maravillas de Peru en tu proximo viaje!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Perú es un país que te llevará desde las alturas de los Andes hasta las profundidades de la selva amazónica, y te mostrará una historia rica y una cultura vibrante en cada paso del camino. ¡Ven a descubrir las maravillas de Perú en tu próximo viaje!</html>");
             lblNewLabel_11.setForeground(new Color(255,255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 97, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/lima peru (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/lima peru (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -382,14 +364,14 @@ public class Inicio {
 
             card.add(lblAustralia);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Australia es un continente de contrastes que ofrece aventuras al aire libre, una rica diversidad cultural y una belleza natural impresionante. ¡Descubre la magia de Australia en tu proximo viaje!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Australia es un continente de contrastes que ofrece aventuras al aire libre, una rica diversidad cultural y una belleza natural impresionante. ¡Descubre la magia de Australia en tu próximo viaje!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 87, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/australia wo (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/australia wo (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -402,14 +384,14 @@ public class Inicio {
 
             card.add(lblJapon);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Japon es una tierra de contrastes, donde la espiritualidad y la tecnologia conviven en perfecta armonia. Un viaje a Japon te llevara a traves de un mundo de maravillas culturales y naturales. ¡Descubre la fascinacion de Japon en tu proximo viaje!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Japón es una tierra de contrastes, donde la espiritualidad y la tecnología conviven en perfecta armonía. Un viaje a Japón te llevará a través de un mundo de maravillas culturales y naturales. ¡Descubre la fascinación de Japón en tu próximo viaje!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255,255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 108, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/japonn (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/japonn (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -422,14 +404,14 @@ public class Inicio {
 
             card.add(lblInglaterra);
 
-            JLabel lblNewLabel_11 = new JLabel("<html>Inglaterra es una tierra de contrastes, donde lo antiguo y lo nuevo conviven en armonia. Un viaje a Inglaterra te llevara a traves de una fascinante mezcla de cultura, historia y belleza natural. ¡Descubre el encanto de Inglaterra en tu proximo viaje!</html>");
+            JLabel lblNewLabel_11 = new JLabel("<html>Inglaterra es una tierra de contrastes, donde lo antiguo y lo nuevo conviven en armonía. Un viaje a Inglaterra te llevará a través de una fascinante mezcla de cultura, historia y belleza natural. ¡Descubre el encanto de Inglaterra en tu próximo viaje!</html>");
             lblNewLabel_11.setForeground(new Color(255, 255, 255));
             lblNewLabel_11.setFont(new Font("Times New Roman", Font.PLAIN, 18));
-            lblNewLabel_11.setBounds(5, 97, 393, 258);
+            lblNewLabel_11.setBounds(0, 149, 393, 258);
             card.add(lblNewLabel_11);
 
             JButton btnNewButton_4 = new JButton("");
-            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/src/Imagenes/london (1).jpg"));
+            btnNewButton_4.setIcon(new ImageIcon("proyecto pagina/bin/Imagenes/london (1).jpg"));
             btnNewButton_4.setBounds(0, 27, 421, 147);
             card.add(btnNewButton_4);
         }
@@ -479,4 +461,3 @@ public class Inicio {
         frame.setVisible(true);
     }
 }
-
