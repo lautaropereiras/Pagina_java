@@ -6,16 +6,12 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import java.awt.event.ActionListener;
-import java.sql.DriverManager;
-import java.sql.Statement;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
-import javax.swing.JPasswordField;
 
 public class registrarse {
     private JFrame frame;
@@ -33,8 +29,9 @@ public class registrarse {
     private JTextField textField_6;
     private JTextField textField_7;
     private JTextField textField_8;
+    private JTextField textField_9;
+    private JTextField textField_10;
     private JPanel panel;
-    private JPasswordField passwordField;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -55,7 +52,6 @@ public class registrarse {
 
     private void initialize() {
         frame = new JFrame();
-        frame.getContentPane().setBackground(new Color(109, 119, 146));
         frame.setBounds(100, 100, 928, 744);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
@@ -98,7 +94,7 @@ public class registrarse {
         frame.getContentPane().add(textField_3);
         textField_3.setColumns(10);
 
-        btnNewButton_2 = new JButton("Rese�as");
+        btnNewButton_2 = new JButton("Reseñas");
         btnNewButton_2.setBackground(new Color(14, 94, 171));
         btnNewButton_2.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         btnNewButton_2.setBounds(457, 24, 114, 30);
@@ -129,15 +125,15 @@ public class registrarse {
         btnNewButton_4.setBounds(806, 11, 89, 58);
         frame.getContentPane().add(btnNewButton_4);
         btnNewButton_4.setActionCommand("");
-        btnNewButton_4.setIcon(new ImageIcon("D:\\5 �2\\LPOO\\proyecto pagina\\Imagenes\\registrarse (1).jpg"));
+        btnNewButton_4.setIcon(new ImageIcon("D:\\5 °2\\LPOO\\proyecto pagina\\Imagenes\\registrarse (1).jpg"));
         btnNewButton_4.setBackground(new Color(255, 255, 255));
         btnNewButton_4.setBorder(null);
         btnNewButton_4.setFont(new Font("Arial", Font.BOLD, 30));
         
-        lblNewLabel_1 = new JLabel("Contrasenia:");
+        lblNewLabel_1 = new JLabel("Contraseña:");
         lblNewLabel_1.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
         lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel_1.setBounds(260, 338, 145, 35);
+        lblNewLabel_1.setBounds(250, 338, 145, 35);
         frame.getContentPane().add(lblNewLabel_1);
         
         JLabel lblNewLabel_1_1 = new JLabel("Nombre y apellido:");
@@ -149,7 +145,7 @@ public class registrarse {
         JLabel lblNewLabel_1_2 = new JLabel("Telefono:\r\n");
         lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
         lblNewLabel_1_2.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-        lblNewLabel_1_2.setBounds(260, 204, 145, 35);
+        lblNewLabel_1_2.setBounds(239, 204, 145, 35);
         frame.getContentPane().add(lblNewLabel_1_2);
         
         JLabel lblNewLabel_1_3 = new JLabel("Correo Electronico:");
@@ -164,9 +160,8 @@ public class registrarse {
         frame.getContentPane().add(lblNewLabel_2);
         
         JCheckBox chckbxNewCheckBox = new JCheckBox("Acepto los terminos y condiciones\r\n");
-        chckbxNewCheckBox.setBackground(new Color(109, 119, 146));
         chckbxNewCheckBox.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
-        chckbxNewCheckBox.setBounds(293, 453, 338, 23);
+        chckbxNewCheckBox.setBounds(271, 476, 338, 23);
         frame.getContentPane().add(chckbxNewCheckBox);
         
         textField_6 = new JTextField();
@@ -175,61 +170,46 @@ public class registrarse {
         frame.getContentPane().add(textField_6);
         
         textField_7 = new JTextField();
+        textField_7.setText("\r\n");
         textField_7.setColumns(10);
         textField_7.setBounds(473, 208, 171, 30);
         frame.getContentPane().add(textField_7);
-        
         
         textField_8 = new JTextField();
         textField_8.setColumns(10);
         textField_8.setBounds(473, 275, 171, 30);
         frame.getContentPane().add(textField_8);
         
-        JButton btnEnviar = new JButton("Enviar");
-        btnEnviar.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) {
-        		
-        		try {
-					
-        			Class.forName("com.mysql.cj.jdbc.Driver");
-        			
-        			java.sql.Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/traveldiscover","root", "");
-        			
+        textField_9 = new JTextField();
+        textField_9.setColumns(10);
+        textField_9.setBounds(473, 342, 171, 30);
+        frame.getContentPane().add(textField_9);
         
-        			
-        				String nombre = textField_6.getText();
-        				int telefono = Integer.parseInt(textField_7.getText());
-        				String correo = textField_8.getText();
-        				String contrasenia = passwordField.getText();
-        				
-        				
-        				String query = "INSERT INTO `clientes`(`Correo`, `Nombre`, `Telefono`, `Contrasenia`) VALUES ('"+correo+"','"+nombre+"','"+telefono+"','"+contrasenia+"')";
-        				
-        				Statement stmt = conexion.createStatement();
-        				
-        				stmt.executeUpdate(query);
-        				
-        				JOptionPane.showMessageDialog(null, "Se agrego correctamente a la base!");
-        			
-				} catch (Exception e2) {
-					System.out.println("Error al conectar a la base de datos");
-					e2.printStackTrace();
-				}
-        		
-        	}
-        });
+        JLabel lblNewLabel_1_4 = new JLabel("Confirmar contraseña:");
+        lblNewLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
+        lblNewLabel_1_4.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+        lblNewLabel_1_4.setBounds(271, 405, 193, 35);
+        frame.getContentPane().add(lblNewLabel_1_4);
+        
+        textField_10 = new JTextField();
+        textField_10.setColumns(10);
+        textField_10.setBounds(473, 409, 171, 30);
+        frame.getContentPane().add(textField_10);
+        
+        JButton btnEnviar = new JButton("Enviar");
         btnEnviar.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        btnEnviar.setBounds(381, 546, 102, 30);
+        btnEnviar.setBounds(387, 610, 102, 30);
         frame.getContentPane().add(btnEnviar);
+        
+        JCheckBox chckbxEnviarNotificacionesAl = new JCheckBox("Enviar notificaciones al correo electronico");
+        chckbxEnviarNotificacionesAl.setFont(new Font("Times New Roman", Font.BOLD | Font.ITALIC, 20));
+        chckbxEnviarNotificacionesAl.setBounds(271, 543, 455, 23);
+        frame.getContentPane().add(chckbxEnviarNotificacionesAl);
         
         panel = new JPanel();
         panel.setBackground(new Color(109, 119, 146));
         panel.setBounds(-4, 0, 916, 81);
         frame.getContentPane().add(panel);
-        
-        passwordField = new JPasswordField();
-        passwordField.setBounds(473, 338, 171, 30);
-        frame.getContentPane().add(passwordField);
         
     }
 }
